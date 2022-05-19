@@ -1,0 +1,176 @@
+html {
+    width: 100%;
+}
+
+body {
+    max-width: 800px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(244, 244, 244);
+}
+
+section.form {
+    padding: 1rem;
+    text-align: center;
+    margin: 0.5rem 1rem;
+}
+
+h2{
+    text-align: center;
+    padding-top: 5rem;
+}
+
+#logostex{
+    position: absolute;
+    margin: 1rem;
+    top: 0;
+    right: 0;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    font-weight: 500;
+    border: 17px solid rgb(255, 235, 0);
+    border-radius: 3px;
+}
+
+#modelv{
+    width: 100%;
+    min-height: 700px;
+}
+
+div.model-viewer{
+    text-align: center;
+}
+
+div.userInput{
+    background-color: red;
+}
+
+form[name="addTodo"] {
+    display: flex;
+}
+
+input[type="text"] {
+    flex: 1;
+}
+
+form[name="addTodo"]>input,
+form[name="addTodo"]>label {
+    font-size: 1.5rem;
+}
+
+@media screen and (max-width: 540px) {
+	form[name="addTodo"] {
+		flex-direction: column;
+	}		
+}
+
+section.todos {
+    display: flex;
+    flex-direction: column;
+}
+
+article {
+    background-color: white;
+    margin: 0.5rem 1rem;
+    display: flex;
+    font-weight: 500;
+    justify-content: space-between;
+    border: 17px solid rgb(255, 235, 0);
+    border-radius: 3px;
+    padding: 1rem;
+}
+
+article:hover {
+    box-shadow: none;
+    background-color: "#F4F4F4";
+    cursor: pointer;    
+}
+
+article.done>span {
+    color:lightgray;
+    text-decoration: line-through;
+}
+
+article
+{
+ -moz-user-select: none; /* Firefox */
+ -webkit-user-select: none; /* Chrome, Safari, Opéra depuis la version 15 */
+ -ms-user-select: none; /* Internet explorer depuis la version 10 et Edge */
+ user-select: none; /* Propriété standard */
+}
+
+#submit{
+    text-align: center;
+}
+
+.texte-explicatif{
+    display: inline-block;
+    text-align: justify;
+    width: 85%;
+    background-color: white;
+    margin: 0.5rem 1rem;
+    display: flex;
+    font-weight: 500;
+    justify-content: space-between;
+    border: 17px solid rgb(255, 235, 0);
+    border-radius: 3px;
+    padding: 1rem;
+}
+
+#button_install{
+    display: inline-block;
+    width: 5%;
+}
+
+.file{
+    text-align: justify;
+    background-color: white;
+    justify-content: space-between;
+    border: 17px solid rgb(255, 235, 0);
+    border-radius: 3px;
+    padding: 1rem;
+    margin: 0.5rem 1rem;
+}
+
+.error_mess{
+    display: block;
+}
+
+.mdc_banner_text{
+    width: 48%;
+    display: inline-block;
+    text-align: center;
+}
+
+#warning{
+    display: inline-block;
+    width: 10%;
+}
+
+#button{
+    background-color: red;
+    font-size: large;
+}
+.hidden{
+    display: none;
+}
+
+#bb{
+    background-color: grey;
+}
+
+.mdc-banner--centered{
+    text-align: center;
+    border: black solid ;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    flex-wrap: wrap;
+}
+
+.texte-explicatif{
+    float: right;
+}
+
