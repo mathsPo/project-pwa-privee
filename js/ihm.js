@@ -44,7 +44,7 @@ function showErrorMessage(error){
 }
 
 /**
- * Après le chargement de la page
+ * Après le chargement de la page, activation et desactivation du spinner
  */
 window.addEventListener('load', () => {
     startSpinner();
@@ -57,14 +57,19 @@ window.addEventListener('load', () => {
  * @param file à ajouter dans la page web
  */
 function appendModelHtml(file) {
+    //Creation de l'element HTML qui va contenir le modele
     const article = document.createElement('article');
     const span = document.createElement('span');
+    //Ajout du nom du fichier dans l'element HTML span
     span.innerText = file.name;
     article.appendChild(span);
+    //Ajout d'un aid a l'article
     article.id = 'article' + file.name;
 
+    //appelle de la fonction createTrashButton pour ajouter les boutons à l'article 
     article.appendChild(createTrashButton(file));
 
+    //Ajout de l'article a la page web
     modelsContainer.appendChild(article);
 }
 
@@ -80,7 +85,7 @@ function clearModel() {
  * @param file à ajouter dans la page web
  */
 function createTrashButton(file) {
-    /* Creation du bouton de RA */
+    // Creation du bouton de RA 
     const va_icon = document.createElement('button');
     va_icon.type = 'button';
     va_icon.name = 'va';
@@ -90,7 +95,7 @@ function createTrashButton(file) {
     span.innerHTML = 'view_in_ar';
     va_icon.appendChild(span); 
 
-    /* Creation du bouton poubelle */
+    // Creation du bouton poubelle 
     const del = document.createElement('button');
     del.type = 'button';
     del.name = 'del';
@@ -100,13 +105,13 @@ function createTrashButton(file) {
     span2.innerHTML = 'delete';
     del.appendChild(span2);
 
-    /* Creation du div contenant les options de manipulation */
+    // Creation du div contenant les options de manipulation (poubelle et RA) 
     const div = document.createElement('div');
     div.type = 'container';
     div.appendChild(va_icon);
     div.appendChild(del); 
 
-    /* L'action que produit le bouton de RA */
+    // L'action que produit le bouton de RA, declenchant une preview du model en question
     va_icon.onclick=(event) => {
         while (visual.firstChild) {
             visual.removeChild(visual.firstChild);
@@ -118,7 +123,7 @@ function createTrashButton(file) {
         event.stopPropagation(); 
     };
 
-    /* L'action que produit le bouton de la poubelle */
+    // L'action que produit le bouton de la poubelle, appelle de la fonction deleteModel
     del.onclick=(event) => {
         deleteModel(file.name, event);
         event.stopPropagation();
@@ -130,12 +135,10 @@ function createTrashButton(file) {
 /**
  * Suppression d'un modele identifié par son nom dans la page web
  * @param name du model à supprimer
- * @param {Event} event déclenché par le clic sur le bouton de suppression
  */
  function deleteModel(name) {
     startSpinner();
     console.log('Delete model ' + name + ' request');
-    console.log(name);
     const article = document.getElementById('article' + name);
     modelsContainer.removeChild(article);
 
