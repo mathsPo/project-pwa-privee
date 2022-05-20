@@ -118,7 +118,9 @@ function createTrashButton(file) {
         }
         h2 = document.createElement('h2');
         h2.textContent = "Modele de " + file.name;
-        mv.innerHTML = `<model-viewer class='image' id='modelv' src='Redmi Note 9 Pro/Documents/modeles/${file.name}' shadow-intensity='1' ar ar-modes='webxr scene-viewer quick-look' camera-controls min-camera-orbit='auto auto 100%' max-camera-orbit='auto auto 100%' min-field-of-view='45deg' max-field-of-view='45deg' environment-image='neutral' auto-rotate autoplay></model-viewer>`
+        $src = `Redmi Note 9 Pro/Documents/modeles/${file.name}`;
+        console.log($src);
+        mv.innerHTML = `<model-viewer class='image' id='modelv' src='${$src}' shadow-intensity='1' ar ar-modes='webxr scene-viewer quick-look' camera-controls min-camera-orbit='auto auto 100%' max-camera-orbit='auto auto 100%' min-field-of-view='45deg' max-field-of-view='45deg' environment-image='neutral' auto-rotate autoplay></model-viewer>`
         visual.appendChild(h2)  
         event.stopPropagation(); 
     };
