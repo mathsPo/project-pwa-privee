@@ -106,7 +106,8 @@ article
 }
 
 .texte-explicatif{
-    display: inline-block;
+    display: flex;
+    justify-content: center;
     text-align: justify;
     width: 85%;
     background-color: white;
