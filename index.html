@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="fr" xmlns="http://www.w3.org/1999/html">
 <head>
+    <!--Titre de la page -->
     <title>PWA - Liste des modeles en RA</title>
     
     <meta charset="UTF-8">
@@ -19,6 +20,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     <script>
+        //Initialisation du serviceWorker (le service worker met en cache les ressources pour y acceder hors connexion)
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('sw.js').then(function(reg) {
                 console.log('Registration succeeded. Scope is ' + reg.scope);
@@ -31,6 +33,7 @@
 </head>
 <body>
 <header>
+    <!--Titre de l'appli-->
     <h1>LABO*AR
         <span class="material-icons">
             qr_code_scanner
@@ -40,6 +43,7 @@
 </header>
 
         <div class="texte-explicatif">
+             <!--Zone de texte qui decrit l'application-->
             <p>
                 Bienvenue sur la visionneuse 3D de Saint-Ex Culture Numérique . 
                 Cette Webapp permet de visualiser des modèles 3D réalisés au cours d’ateliers à Saint-Ex en réalité augmentée. 
@@ -49,7 +53,9 @@
         </div>
         
     <div class="file">
+        <!--Formulaire de chargement de fichier-->
         <form>
+            <!--Texte qui explique comment il faut proceder pour pouvoir visualiser les modeles 3D-->
             <p>Charger des fichiers 3D à partir d'un <strong>dossier</strong> nommé "modeles"</p>
             <input type="file" id="file-selector" multiple>
             <br>    
